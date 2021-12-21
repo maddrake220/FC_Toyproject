@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="./main.css"/>
+
+  <!-- swiper -->
+   <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script defer src="./main.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="iphone-status-bar">
+      <span>9:41</span>
+      <div>
+        <img src="./images/Cellular Connection.png" alt="">
+      <img src="./images/Wifi.png" alt="">
+      <img src="./images/Battery.png" alt="">
+
+      </div>
+          </div>
+    <nav>
+      <h2 class="section-title__hide"></h2>
+      <ul>
+        <li><a><img src="./images/Home.png" alt=""></a></li>
+        <li><a><img src="./images/TwoArrow.png" alt=""></a></li>
+        <li><a><img src="./images/TextBox.png" alt=""></a></li>
+        <li><a><img src="./images/More.png" alt=""></a></li>
+      </ul>
+    </nav>
+    <!-- 메인 화면 -->
+    <section class="account-container"> <!--전체 화면-->
+      <header class="account-header"> <!--상단에 프로필사진, 생활비, 아이콘 2개-->
+        <div class="avatar"> <!--프로필 사진-->
+          <img id="avatarimg" src="./images/avatar.png" width="43px" height="43px" alt="">
+        </div>
+        <h1 class="account-name">생활비</h1>
+        <div>
+          <a><img src="./images/Vector.png" alt=""></a>	<!--qrcode-->
+          <a><img src="./images/Vector_2.png" alt=""></a>	<!--search-icon-->
+
+        </div>
+      </header>
+
+      <!-- 
+        <div class="account-progress-container"> <div class="progress"> <div class="progressing"></div> <span class="vertical-bar"></span> </div> <a href="#" class="link-graph"><img src="./images/graph-icon.png" alt="graph-icon"></a> </div> <p class="account-status__text"><span>5</span>일 동안 <span>210,000</span>원 남음</p> </div>
+       -->
+      <!-- 계좌번호 공간 -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <section class="account-status">
+              <h2 class="section-title__hide"></h2> <!--font-size:0-->
+              <strong class="account-number">355-583725-248388</strong> <!--계좌번호-->
+              <span class="transfer-btn"><a>이체</a></span>
+              <div class="bank-account">1,240,000<strong>원</strong></div> <!--남은 금액-->
+              <div class="account-status-bar">
+                <div class="account-progress-container">
+                  <div class="progress">
+                    <div class="progressing"></div>
+                    <span class="vertical-bar"></span>
+                  </div>
+                </div>
+                  <a href="#">
+                    <img class="link-graph" src="/images/mdi_bar_chart.png"/></a>
+              </div>
+              <p class="account-status__text"><span>5</span>일 동안 <span>210,000</span>원 남음</p> <!--5일 동안 210,000원 남음-->
+            </section>
+          </div>
+          <div class="swiper-slide">
+            <section class="account-status">
+              <h2 class="section-title__hide"></h2> <!--font-size:0-->
+              <strong class="account-number">23-232117-34773</strong> <!--계좌번호-->
+              <span class="transfer-btn"><a>이체</a></span>
+              <div class="bank-account">440,000<strong>원</strong></div> <!--남은 금액-->
+              <div class="account-status-bar">
+                <div class="account-progress-container">
+                  <div class="progress">
+                    <div class="progressing" style="background-color: #4C89FF;"></div>
+                    <span class="vertical-bar"></span>
+                  </div>
+                </div>
+                  <a href="#">
+                    <img class="link-graph" src="/images/mdi_bar_chart.png"/></a>
+              </div>
+              <p class="account-status__text"><span>5</span>일 동안 <span>210,000</span>원 남음</p> <!--5일 동안 210,000원 남음-->
+            </section>
+          </div>
+          <div class="swiper-slide">
+            <section class="account-status">
+              <h2 class="section-title__hide"></h2> <!--font-size:0-->
+              <strong class="account-number">155-23422-78773</strong> <!--계좌번호-->
+              <span class="transfer-btn"><a>이체</a></span>
+              <div class="bank-account">3,140,000<strong>원</strong></div> <!--남은 금액-->
+              <div class="account-status-bar">
+                <div class="account-progress-container">
+                  <div class="progress">
+                    <div class="progressing" style="background-color: #C64CFF;"></div>
+                    <span class="vertical-bar"></span>
+                  </div>
+                </div>
+                  <a href="#">
+                    <img class="link-graph" src="/images/mdi_bar_chart.png"/></a>
+              </div>
+              <p class="account-status__text"><span>5</span>일 동안 <span>120,000</span>원 남음</p> <!--5일 동안 210,000원 남음-->
+            </section>
+          </div>
+        </div>
+      </div>
+      <aside class="ad-banner"> <!--광고 베너 부분-->
+        <p class="ad-text">지금 낮은 이자로 생활대출을 신청하세요! <a href="javescript:void(0)">Go</a></p>
+      </aside>
+     <!-- 계좌 상세 공간 -->
+      <section class="account-detail">
+<!--중하단 지출내역-->
+       <h2 class="section-title__hide"></h2> <!--font-size:0-->
+
+     <div class="saving-container">
+      <div class="horizontal-bar"></div>
+
+        <div class="saving-list"> <!--저금 계좌 리스트-->
+            <div class="saving">
+              
+            <div class="progress progress-1">
+              <div class="progressing progressing-1" style="background-color: #FF5F00;">
+                <div>
+                  <span class="saving-name">여행 가자!</span> <!--여행 가자!-->
+                  <span class="saved-money">842,200원</span> <!--842,200원-->
+  
+                </div>
+              </div>
+          </div>
+          
+			</div>
+			 <div class="saving">
+		      
+          <div class="progress progress-2" >
+            <div class="progressing  progressing-2">
+              <div>
+                <span class="saving-name-2">냉장고사기</span> <!--여행 가자!-->
+                <span class="saved-money-2">142,200원</span> <!--842,200원-->
+  
+              </div>
+            </div>
+          </div>
+			</div>
+          </div>
+        <div class="add-saving-container">	
+		    <span>저금통 만들기</span> <!--저금 추가 하겠냐는 문구-->
+            <button class="add-saving-btn"><img /></bu/button> <!-- + 버튼-->
+       </div>
+        <!--지출 내역-->
+        <div class="transaction-container">
+            
+          </div>
+      </section>
+    </section>
+  </div>
+</body>
+</html>

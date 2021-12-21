@@ -1,0 +1,269 @@
+/* Common */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.section-title__hide {
+  font-size: 0;
+}
+.wrap {
+  width: 375px;
+  height: 812px;
+  box-sizing: border-box;
+  background-color: #eeebe5;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* scrollbar  */
+.transaction-container::-webkit-scrollbar {
+  display: none;
+}
+.saving-list::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.transaction-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.saving-list {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* iphone status bar */
+.iphone-status-bar {
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 31px;
+  margin-right: 12px;
+}
+/* account header */
+.account-container .account-header {
+  padding-top: 11px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 17px 0 24px;
+}
+
+.account-container .account-header .account-name {
+  transform: translateX(15px);
+}
+.account-container .account-header div {
+  display: flex;
+  align-items: center;
+}
+.account-container .account-header div a {
+  padding-left: 15px;
+}
+
+.account-container .account-header .account-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Account Section */
+.account-container .account-status {
+  width: 279px;
+  height: 155px;
+  margin: 33px auto 24px;
+  text-align: center;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(194, 211, 47, 0.3);
+}
+
+.account-status .account-number {
+  padding-top: 19px;
+  font-size: 14px;
+  color: #858585;
+  display: block;
+}
+.account-status .transfer-btn {
+  position: absolute;
+  font-size: 14px;
+  right: 16px;
+  top: 16px;
+}
+
+.account-status .bank-account {
+  padding-top: 18px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.account-progress-container {
+  margin-top: 14px;
+}
+.account-progress-container .progress {
+  width: 202px;
+  height: 6px;
+  background-color: #c4c4c4;
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+}
+
+.account-progress-container .progress .progressing {
+  width: 128px;
+  height: 6px;
+  background-color: #ffdb4c;
+}
+
+.account-progress-container .progress .vertical-bar {
+  width: 4px;
+  height: 17px;
+  background-color: #ff5f00;
+  position: absolute;
+  top: -6px;
+  right: 40px;
+}
+
+.account-status .bank-account strong {
+  font-size: 14px;
+}
+
+.account-status .account-status-bar .link-graph {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  bottom: 48px;
+  right: 0;
+}
+
+.account-status .account-status__text {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #858585;
+  padding-bottom: 8px;
+}
+
+.ad-banner {
+  display: flex;
+  justify-content: center;
+}
+.ad-banner .ad-text {
+  font-size: 14px;
+  color: #000;
+}
+.ad-banner .ad-text a {
+  text-decoration: underline;
+}
+/* account-detail */
+
+.account-detail {
+  margin-top: 20px;
+}
+
+.account-detail .saving-container {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.account-detail .saving-container .horizontal-bar {
+  width: 48px;
+  height: 2.15px;
+  background-color: #c4c4c4;
+  border-radius: 4px;
+  margin: 4.3px auto 0;
+  cursor: grab;
+}
+.account-detail .saving-container .saving-list {
+  display: flex;
+  overflow-y: auto;
+  cursor: pointer;
+}
+
+.account-detail .saving-container .saving-list .progress {
+  margin-right: 14px;
+  height: 47px;
+  width: 162px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #dadada;
+  overflow: hidden;
+}
+.account-detail .saving-container .saving-list .progressing {
+  height: 47px;
+  width: 97px;
+  display: block;
+  color: white;
+  font-size: 12px;
+}
+.account-detail .saving-container .saving-list .progressing div {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.add-saving-container {
+  position: absolute;
+  right: -300px;
+}
+.transaction-container {
+  overflow-y: scroll;
+  height: 330px;
+}
+.account-detail .saving-container > div {
+  width: 302px;
+  margin: 17px auto 0px;
+  font-size: 14px;
+}
+.account-detail .saving-container > div > div {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.account-detail .saving-container > div > div > h3 {
+  font-weight: 700;
+}
+
+.account-detail .saving-container > div > div > span {
+  color: #b4b4b4;
+}
+.account-detail .saving-container > div > ul > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 34px;
+  border-bottom: 1px solid #dcdcdc;
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 300;
+}
+.orange {
+  color: #ff5f00;
+}
+.orange::before {
+  content: "+ ";
+}
+
+.wrap nav {
+  position: fixed;
+  bottom: 0;
+  width: 375px;
+  height: 76px;
+  z-index: 9;
+  background: linear-gradient(#00bdb2, #c4e7b8);
+}
+
+.wrap nav ul {
+  display: flex;
+}
+
+.wrap nav ul li {
+  flex-grow: 1;
+  margin-left: 26px;
+  margin-top: 21px;
+  cursor: pointer;
+}
