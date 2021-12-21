@@ -13,7 +13,7 @@ const avatar = document.getElementById("avatarimg");
 progressingBar1.style = "background-color: #ff5f00;";
 progressingBar2.style = "background-color: #feb700";
 
-const Url = "./bank.json";
+const Url = "../common/bank.json";
 fetch(Url)
   .then((res) => res.json())
   .then((obj) => start(obj));
@@ -159,3 +159,19 @@ const savingChange = (index) => {
     default:
   }
 };
+
+const horizontalBarToggle = document.querySelector(".horizontal-bar");
+const savingContainer = document.querySelector(".saving-container");
+let isSpread = false;
+horizontalBarToggle.addEventListener("click", () => {
+  isSpread = !isSpread;
+  if (isSpread) {
+    savingContainer.classList.add("saving-container-spread");
+    transConEl.style.height = "580px";
+  } else {
+    savingContainer.classList.remove("saving-container-spread");
+    setTimeout(() => {
+      transConEl.style.height = "340px";
+    }, 1000);
+  }
+});

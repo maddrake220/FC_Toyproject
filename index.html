@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="./main.css"/>
+  <link rel="stylesheet" href="./common/common.css"/>
 
   <!-- swiper -->
    <link
@@ -14,19 +15,11 @@
     />
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script defer src="./main.js"></script>
-  <title>Document</title>
+  <title>홈</title>
 </head>
 <body>
   <div class="wrap">
-    <div class="iphone-status-bar">
-      <span>9:41</span>
-      <div>
-        <img src="./images/Cellular Connection.png" alt="">
-      <img src="./images/Wifi.png" alt="">
-      <img src="./images/Battery.png" alt="">
-
-      </div>
-          </div>
+    <iframe src="./pages/statusbar" height="50px" width="370px" title="description"></iframe>
     <nav>
       <h2 class="section-title__hide"></h2>
       <ul>
@@ -36,6 +29,8 @@
         <li><a><img src="./images/More.png" alt=""></a></li>
       </ul>
     </nav>
+
+    
     <!-- 메인 화면 -->
     <section class="account-container"> <!--전체 화면-->
       <header class="account-header"> <!--상단에 프로필사진, 생활비, 아이콘 2개-->
@@ -152,11 +147,13 @@
             </div>
           </div>
 			</div>
-          </div>
-        <div class="add-saving-container">	
-		    <span>저금통 만들기</span> <!--저금 추가 하겠냐는 문구-->
-            <button class="add-saving-btn"><img /></bu/button> <!-- + 버튼-->
+      <div class="add-saving-container">	
+            <button class="add-saving-btn"><img src="./images/addbutton.png"/></button> <!-- + 버튼-->
+            <span>저금통 만들기</span>
+            
        </div>
+          </div>
+        
         <!--지출 내역-->
         <div class="transaction-container">
             

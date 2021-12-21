@@ -1,0 +1,46 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.section-title__hide {
+  font-size: 0;
+}
+.wrap {
+  width: 375px;
+  height: 812px;
+  box-sizing: border-box;
+  background-color: #eeebe5;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+button {
+  margin-left: 52px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 375px;
+  height: 76px;
+  z-index: 10;
+  background: linear-gradient(#00bdb2, #c4e7b8);
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  flex-grow: 1;
+  margin-left: 26px;
+  margin-top: 21px;
+  cursor: pointer;
+}

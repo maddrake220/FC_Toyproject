@@ -1,21 +1,4 @@
 /* Common */
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.section-title__hide {
-  font-size: 0;
-}
-.wrap {
-  width: 375px;
-  height: 812px;
-  box-sizing: border-box;
-  background-color: #eeebe5;
-  border-radius: 2px;
-  position: relative;
-  overflow: hidden;
-}
 
 /* scrollbar  */
 .transaction-container::-webkit-scrollbar {
@@ -124,8 +107,9 @@ a {
   height: 17px;
   background-color: #ff5f00;
   position: absolute;
-  top: -6px;
+  top: -8px;
   right: 40px;
+  border: 2px solid white;
 }
 
 .account-status .bank-account strong {
@@ -169,8 +153,12 @@ a {
   border-radius: 15px;
   overflow: hidden;
   position: relative;
+  z-index: 9;
+  transition: 1s;
 }
-
+.saving-container.saving-container-spread {
+  transform: translateY(-240px);
+}
 .account-detail .saving-container .horizontal-bar {
   width: 48px;
   height: 2.15px;
@@ -207,12 +195,18 @@ a {
 }
 
 .add-saving-container {
-  position: absolute;
-  right: -300px;
+  display: flex;
+  align-items: center;
+}
+
+.add-saving-container span {
+  width: 100px;
+  margin-left: 8px;
+  display: block;
 }
 .transaction-container {
   overflow-y: scroll;
-  height: 330px;
+  height: 340px;
 }
 .account-detail .saving-container > div {
   width: 302px;
@@ -220,7 +214,7 @@ a {
   font-size: 14px;
 }
 .account-detail .saving-container > div > div {
-  margin-top: 16px;
+  margin-top: 21px;
   display: flex;
   justify-content: space-between;
 }
@@ -246,24 +240,4 @@ a {
 }
 .orange::before {
   content: "+ ";
-}
-
-.wrap nav {
-  position: fixed;
-  bottom: 0;
-  width: 375px;
-  height: 76px;
-  z-index: 9;
-  background: linear-gradient(#00bdb2, #c4e7b8);
-}
-
-.wrap nav ul {
-  display: flex;
-}
-
-.wrap nav ul li {
-  flex-grow: 1;
-  margin-left: 26px;
-  margin-top: 21px;
-  cursor: pointer;
 }
