@@ -4,51 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css" />
-    <link rel="stylesheet" href="../common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
 
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../common/common.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="./main.js"></script>
     <title>지출관리</title>
   </head>
+
   <body>
-    <section class="expensesManagement">
-      <button>닫기</button>
-      <header>
-        <h1>지출 관리</h1>
-      </header>
-      <div class="SetTheBaseAmount_Container">
-        <div class="SetTheBaseAmount">
-          <h2>기준금액설정</h2>
-          <div>2,100,000원</div>
+    <div class="wrap">
+      <iframe
+        src="../statusbar/"
+        height="50px"
+        width="370px"
+        title="description"
+      ></iframe>
+      <section class="expensesManagement">
+        <button>닫기</button>
+        <header>
+          <h1>지출 관리</h1>
+        </header>
+        <div class="SetTheBaseAmount_Container">
+          <div class="SetTheBaseAmount">
+            <h2>기준금액설정</h2>
+            <div>2,100,000원</div>
+          </div>
+          <div class="meter_container">
+            <div class="progress">
+              <span></span>
+              <div class="progressing"></div>
+            </div>
+            <button></button>
+          </div>
+          <div class="DailyReport">
+            <h2>일간 리포트</h2>
+            <div class="chartjs">
+              <canvas id="myChart" width="400" height="300"></canvas>
+            </div>
+          </div>
+          <div class="thisMonthReport">
+            <h2>6월 지출 패턴</h2>
+            <div class="chartjs"></div>
+            <ul>
+              <li><span>주유비</span><span>56,000원</span></li>
+              <li><span>건강관리비</span><span>80,000원</span></li>
+              <li><span>외식비</span><span>233,000원</span></li>
+              <li><span>장보기</span><span>390,000원</span></li>
+              <li><span>상점</span><span>46,000원</span></li>
+            </ul>
+          </div>
         </div>
-        <div class="meter_container">
-          <meter>
-            <span></span>
-          </meter>
-          <button></button>
-        </div>
-        <div class="DailyReport">
-          <h2>일간 리포트</h2>
-          <div class="chartjs"></div>
-        </div>
-        <div class="thisMonthReport">
-          <h2>6월 지출 패턴</h2>
-          <div class="chartjs"></div>
-          <ul>
-            <li><span>주유비</span><span>56,000원</span></li>
-            <li><span>건강관리비</span><span>80,000원</span></li>
-            <li><span>외식비</span><span>233,000원</span></li>
-            <li><span>장보기</span><span>390,000원</span></li>
-            <li><span>상점</span><span>46,000원</span></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Navigation -->
+        <!-- Navigation -->
+      </section>
       <nav>
-        <h2></h2>
+        <h2 class="section-title__hide"></h2>
         <ul>
-          <li><a href="javascript:void(0)"></a></li>
+          <li>
+            <a><img src="../../images/Home.png" alt="" /></a>
+          </li>
+          <li>
+            <a><img src="../../images/TwoArrow.png" alt="" /></a>
+          </li>
+          <li>
+            <a><img src="../../images/TextBox.png" alt="" /></a>
+          </li>
+          <li>
+            <a><img src="../../images/More.png" alt="" /></a>
+          </li>
         </ul>
       </nav>
-    </section>
+    </div>
   </body>
 </html>

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-  <link rel="stylesheet" href="./main.css"/>
+  <link rel="stylesheet" href="./style.css"/>
   <link rel="stylesheet" href="./common/common.css"/>
 
   <!-- swiper -->
@@ -20,19 +20,12 @@
 <body>
   <div class="wrap">
     <iframe src="./pages/statusbar" height="50px" width="370px" title="description"></iframe>
-    <nav>
-      <h2 class="section-title__hide"></h2>
-      <ul>
-        <li><a><img src="./images/Home.png" alt=""></a></li>
-        <li><a><img src="./images/TwoArrow.png" alt=""></a></li>
-        <li><a><img src="./images/TextBox.png" alt=""></a></li>
-        <li><a><img src="./images/More.png" alt=""></a></li>
-      </ul>
-    </nav>
+    
 
     
     <!-- 메인 화면 -->
     <section class="account-container"> <!--전체 화면-->
+      
       <header class="account-header"> <!--상단에 프로필사진, 생활비, 아이콘 2개-->
         <div class="avatar"> <!--프로필 사진-->
           <img id="avatarimg" src="./images/avatar.png" width="43px" height="43px" alt="">
@@ -64,7 +57,7 @@
                     <span class="vertical-bar"></span>
                   </div>
                 </div>
-                  <a href="#">
+                  <a href="./pages//ExpensesManagement/">
                     <img class="link-graph" src="/images/mdi_bar_chart.png"/></a>
               </div>
               <p class="account-status__text"><span>5</span>일 동안 <span>210,000</span>원 남음</p> <!--5일 동안 210,000원 남음-->
@@ -156,10 +149,19 @@
         
         <!--지출 내역-->
         <div class="transaction-container">
-            
           </div>
       </section>
+      
     </section>
+    <nav>
+      <h2 class="section-title__hide"></h2>
+      <ul>
+        <li><a><img src="./images/Home.png" alt=""></a></li>
+        <li><a><img src="./images/TwoArrow.png" alt=""></a></li>
+        <li><a><img src="./images/TextBox.png" alt=""></a></li>
+        <li><a><img src="./images/More.png" alt=""></a></li>
+      </ul>
+    </nav>
   </div>
 </body>
 </html>

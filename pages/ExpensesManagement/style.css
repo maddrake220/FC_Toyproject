@@ -1,0 +1,115 @@
+.expensesManagement {
+  width: 375px;
+  height: 812px;
+  box-sizing: border-box;
+  background-color: #eeebe5;
+  border-radius: 2px;
+  position: relative;
+  padding-left: 29px;
+  padding-right: 29px;
+  margin-top: 33px;
+}
+.expensesManagement h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 35.52px;
+  letter-spacing: -0.24px;
+}
+
+.expensesManagement > button {
+  top: -33px;
+  right: 13px;
+  position: absolute;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.SetTheBaseAmount_Container {
+  margin-top: 29px;
+  border: 1px solid red;
+}
+
+.SetTheBaseAmount_Container .SetTheBaseAmount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.SetTheBaseAmount_Container .SetTheBaseAmount h2 {
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26.64px;
+  letter-spacing: -0.24px;
+}
+
+.SetTheBaseAmount_Container .SetTheBaseAmount > div {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35.52px;
+  letter-spacing: -0.24px;
+  color: #ff5f00;
+}
+
+.SetTheBaseAmount_Container .meter_container {
+  margin-top: 28px;
+  width: 308px;
+  height: 28px;
+}
+
+.SetTheBaseAmount_Container .meter_container .progress {
+  width: 308px;
+  height: 9.18px;
+  background-color: #c4c4c4;
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+}
+
+.SetTheBaseAmount_Container .meter_container .progressing {
+  width: 258px;
+  height: 9.18px;
+  border-radius: 4px 0 0 4px;
+  background-color: #ffdb4c;
+}
+.SetTheBaseAmount_Container .meter_container span {
+  width: 8px;
+  height: 28px;
+  background-color: #ff5f00;
+  position: absolute;
+  top: -12px;
+  right: 40px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.DailyReport {
+  margin-top: 59px;
+}
+
+.DailyReport h2 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 17px;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  width: 375px;
+  height: 76px;
+  z-index: 10;
+  background: linear-gradient(#00bdb2, #c4e7b8);
+}
+
+nav ul {
+  display: flex;
+  height: 100%;
+}
+
+nav ul li {
+  flex-grow: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
