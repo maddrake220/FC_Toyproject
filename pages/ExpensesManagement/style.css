@@ -96,6 +96,26 @@
   overflow-y: auto;
   cursor: pointer;
 }
+
+.thisMonthReport {
+  margin-top: 46px;
+}
+.thisMonthReport .chartjs {
+  display: flex;
+  overflow-y: auto;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.chartjs::-webkit-scrollbar {
+  display: none;
+}
+
+.chartjs {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 nav {
   position: absolute;
   bottom: 0;
@@ -116,13 +136,4 @@ nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.chartjs::-webkit-scrollbar {
-  display: none;
-}
-
-.chartjs {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
