@@ -73,7 +73,7 @@ function start(bank) {
   const sumofPriceList = bankList_groupbyDate.map((v) => v[0]);
   // date list
   const uniqed = _.uniqBy(filterdList, "date");
-  const uniqed_filtedList = uniqed.map((v) => v.date);
+  const uniqed_filtedList = uniqed.map((v) => v.date.slice(8, 10));
   // classify list
   const uniqed_classify = _.sortedUniqBy(filterdList_classify, "classify");
   const uniqed_filtedList_classify = uniqed_classify.map((v) => v.classify);
@@ -136,6 +136,22 @@ function start(bank) {
       },
     },
   });
+
+  const ulEl = document.querySelector(".MonthReport-list");
+  for (let i = 0; i < uniqed_filtedList_classify.length; i++) {
+    const liEl = document.createElement("li");
+    const span_name = document.createElement("span");
+    const span_amount = document.createElement("span");
+    const imgEl = document.createElement("img");
+    span_name.innerText = uniqed_filtedList_classify[i];
+    span_amount.innerText = `${sumofPriceList_classify[i]}원`;
+    imgEl.src = `../../images/chartitem_${i + 1}.png`;
+    ulEl.appendChild(liEl);
+
+    liEl.appendChild(imgEl);
+    liEl.appendChild(span_name);
+    liEl.appendChild(span_amount);
+  }
 }
 
 const slider = document.querySelector(".chartjs");

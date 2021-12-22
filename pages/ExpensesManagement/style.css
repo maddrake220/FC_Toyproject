@@ -1,3 +1,11 @@
+.SetTheBaseAmount_Container::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.SetTheBaseAmount_Container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 .expensesManagement {
   width: 375px;
   height: 812px;
@@ -26,6 +34,8 @@
 
 .SetTheBaseAmount_Container {
   margin-top: 29px;
+  height: 660px;
+  overflow: scroll;
 }
 
 .SetTheBaseAmount_Container .SetTheBaseAmount {
@@ -101,6 +111,7 @@
   margin-top: 46px;
 }
 .thisMonthReport .chartjs {
+  margin-top: 50px;
   display: flex;
   overflow-y: auto;
   cursor: pointer;
@@ -115,7 +126,38 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.MonthReport-list {
+  width: 308px;
+  height: 237.55px;
+}
+.MonthReport-list li {
+  display: flex;
+  height: 39.55px;
+  align-items: center;
+  margin-left: 22px;
+  margin-right: 22px;
+  position: relative;
+}
 
+.MonthReport-list li:first-child {
+  margin-top: 5.45px;
+}
+.MonthReport-list li + li {
+  margin-top: 10.81px;
+}
+
+.MonthReport-list li *:first-child {
+  position: absolute;
+  left: 0;
+}
+.MonthReport-list li *:nth-child(2) {
+  position: absolute;
+  left: 50px;
+}
+.MonthReport-list li *:last-child {
+  position: absolute;
+  right: 0;
+}
 nav {
   position: absolute;
   bottom: 0;
