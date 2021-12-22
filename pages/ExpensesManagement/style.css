@@ -26,7 +26,6 @@
 
 .SetTheBaseAmount_Container {
   margin-top: 29px;
-  border: 1px solid red;
 }
 
 .SetTheBaseAmount_Container .SetTheBaseAmount {
@@ -92,6 +91,11 @@
   margin-bottom: 17px;
 }
 
+.DailyReport .chartjs {
+  display: flex;
+  overflow-y: auto;
+  cursor: pointer;
+}
 nav {
   position: absolute;
   bottom: 0;
@@ -112,4 +116,13 @@ nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.chartjs::-webkit-scrollbar {
+  display: none;
+}
+
+.chartjs {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

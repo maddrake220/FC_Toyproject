@@ -1,0 +1,24 @@
+{
+  "name": "fc_toyproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maddrake220/FC_Toyproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maddrake220/FC_Toyproject/issues"
+  },
+  "homepage": "https://github.com/maddrake220/FC_Toyproject#readme",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

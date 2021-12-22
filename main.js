@@ -13,10 +13,11 @@ const avatar = document.getElementById("avatarimg");
 progressingBar1.style = "background-color: #ff5f00;";
 progressingBar2.style = "background-color: #feb700";
 
-const Url = "../common/bank.json";
+const Url = "./common/bank.json";
 fetch(Url)
   .then((res) => res.json())
-  .then((obj) => start(obj));
+  .then((obj) => start(obj))
+  .catch((error) => console.log(error));
 
 function start(bank) {
   const { bankList } = bank;
