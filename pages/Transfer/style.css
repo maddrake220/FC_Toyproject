@@ -1,0 +1,140 @@
+.transfer-page {
+  width: 375px;
+  height: 812px;
+  box-sizing: border-box;
+  background-color: #eeebe5;
+  border-radius: 2px;
+  position: relative;
+  padding-left: 29px;
+  padding-right: 29px;
+  margin-top: 33px;
+}
+.transfer-page > a {
+  top: -33px;
+  right: 13px;
+  position: absolute;
+  font-weight: 300;
+  font-size: 14px;
+}
+.transfer-page > header > h1 {
+  margin-top: 33px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35.52px;
+  letter-spacing: -0.24px;
+  margin-bottom: 41px;
+}
+.transfer-page .search-account-container .search-account-input {
+  width: 317px;
+  height: 47px;
+  text-align: center;
+  background-color: #eeebe5;
+  border: 1px solid #858585;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: -0.24px;
+  line-height: 23.68px;
+  color: #000;
+}
+.search-account-input::placeholder {
+  color: #000;
+}
+.account-list {
+  margin-top: 55px;
+}
+
+.account-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.account-item + .account-item {
+  margin-top: 17px;
+}
+.account-item .account-info {
+  margin-left: 17px;
+  letter-spacing: -0.24px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23.68px;
+}
+.account-item .account-info p {
+  font-size: 16px;
+}
+.account-item span img {
+  position: absolute;
+  right: 2px;
+  top: 14px;
+  cursor: pointer;
+}
+.expense-input-container {
+  position: relative;
+  margin-top: 42px;
+}
+.expense-input-container input {
+  width: 316px;
+  height: 32px;
+  border: none;
+  background-color: #eeebe5;
+  border-bottom: 3px solid #ff5f00;
+  text-align: center;
+  font-size: 30px;
+}
+.current-account-balance {
+  text-align: center;
+  margin-top: 29px;
+  font-weight: 300;
+  font-size: 18px;
+}
+.expense-input-container span {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 24px;
+  font-weight: 300;
+}
+.number-keypad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.number-keypad div {
+  width: 32%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.number-keypad div span {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 53.28px;
+  letter-spacing: -0.24px;
+  display: block;
+  margin-top: 22px;
+}
+.number-keypad div .backspace {
+  background-image: url("../../images/backspace.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin-left: 36px;
+}
+.transfer-confirm {
+  transform: translateX(-80px);
+  width: 377px;
+  height: 48px;
+  background-color: #ff5f00;
+  text-align: center;
+  display: none;
+}
+
+.transfer-confirm.active {
+  display: block;
+}

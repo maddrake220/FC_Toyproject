@@ -174,24 +174,3 @@
 .MonthReport-list li .img-5 {
   content: url("../../images/chartitem_5.png");
 }
-nav {
-  position: absolute;
-  bottom: 0;
-  width: 375px;
-  height: 76px;
-  z-index: 10;
-  background: linear-gradient(#00bdb2, #c4e7b8);
-}
-
-nav ul {
-  display: flex;
-  height: 100%;
-}
-
-nav ul li {
-  flex-grow: 1;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

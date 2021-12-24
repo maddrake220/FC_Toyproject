@@ -35,3 +35,24 @@ button {
   margin-left: 31px;
   margin-right: 12px;
 }
+.navigation-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 375px;
+  height: 76px;
+  z-index: 10;
+  background: linear-gradient(#00bdb2, #c4e7b8);
+}
+
+.navigation-bottom ul {
+  display: flex;
+  height: 100%;
+}
+
+.navigation-bottom ul li {
+  flex-grow: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

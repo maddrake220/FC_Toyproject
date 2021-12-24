@@ -181,10 +181,3 @@ slider.addEventListener("mousemove", (e) => {
   const walk = x - startX;
   slider.scrollLeft = scrollLeft - walk;
 });
-
-/* const closeButton = document.querySelector(".expensesManagement > button");
-
-closeButton.addEventListener("click", () => {
-  alert("close!");
-});
- */
