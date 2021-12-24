@@ -3,6 +3,8 @@ const scContainer = document.querySelector(".search-account-container");
 seletedItem.forEach((v) =>
   v.addEventListener("click", () => {
     console.log(v);
+    const accountOwnerName = v.getElementsByClassName("account-name");
+    // console.log();
     const id = v.getAttribute("id");
     scContainer.innerHTML = `
     <div id=${id} class="account-item book-marked">${v.innerHTML}</div>
@@ -44,9 +46,21 @@ seletedItem.forEach((v) =>
         } else {
           transferConfirm.style.display = "block";
           str += `${value}`;
+
           expenseInputContainer.setAttribute("value", str);
         }
       })
     );
+    transferConfirm.addEventListener("click", () => {
+      scContainer.innerHTML = `
+      <div class="transfer-complete-message">
+        <p >
+            ${accountOwnerName[0].innerText}님께 <br/>
+            ${expenseInputContainer.getAttribute("value")}원이 <br/>
+            이체되었습니다.
+        </p>
+      </div>
+        `;
+    });
   })
 );

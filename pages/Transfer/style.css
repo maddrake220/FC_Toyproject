@@ -48,6 +48,7 @@
   display: flex;
   position: relative;
   align-items: center;
+  cursor: pointer;
 }
 .account-item + .account-item {
   margin-top: 17px;
@@ -137,4 +138,16 @@
 
 .transfer-confirm.active {
   display: block;
+}
+
+.transfer-complete-message {
+  margin-top: 201px;
+  padding-left: 33px;
+}
+
+.transfer-complete-message p {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 53.28px;
+  letter-spacing: -0.24px;
 }
