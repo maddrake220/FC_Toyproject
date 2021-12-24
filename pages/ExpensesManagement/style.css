@@ -24,7 +24,7 @@
   letter-spacing: -0.24px;
 }
 
-.expensesManagement > button {
+.expensesManagement > a {
   top: -33px;
   right: 13px;
   position: absolute;
@@ -128,7 +128,7 @@
 }
 .MonthReport-list {
   width: 308px;
-  height: 237.55px;
+  height: 337.55px;
 }
 .MonthReport-list li {
   display: flex;
@@ -157,6 +157,22 @@
 .MonthReport-list li *:last-child {
   position: absolute;
   right: 0;
+}
+
+.MonthReport-list li .img-1 {
+  content: url("../../images/chartitem_1.png");
+}
+.MonthReport-list li .img-2 {
+  content: url("../../images/chartitem_2.png");
+}
+.MonthReport-list li .img-3 {
+  content: url("../../images/chartitem_3.png");
+}
+.MonthReport-list li .img-4 {
+  content: url("../../images/chartitem_4.png");
+}
+.MonthReport-list li .img-5 {
+  content: url("../../images/chartitem_5.png");
 }
 nav {
   position: absolute;

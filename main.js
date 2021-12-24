@@ -13,7 +13,8 @@ const avatar = document.getElementById("avatarimg");
 progressingBar1.style = "background-color: #ff5f00;";
 progressingBar2.style = "background-color: #feb700";
 
-const Url = "./common/bank.json";
+const Url =
+  "https://raw.githubusercontent.com/maddrake220/team_toyproject/main/bankData.json";
 fetch(Url)
   .then((res) => res.json())
   .then((obj) => start(obj))

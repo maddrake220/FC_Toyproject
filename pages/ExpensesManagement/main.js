@@ -1,4 +1,5 @@
-const Url = "../../common/bank.json";
+const Url =
+  "https://raw.githubusercontent.com/maddrake220/team_toyproject/main/bankData.json";
 fetch(Url)
   .then((res) => res.json())
   .then((obj) => start(obj));
@@ -146,8 +147,8 @@ function start(bank) {
     span_name.innerText = uniqed_filtedList_classify[i];
     span_amount.innerText = `${sumofPriceList_classify[i]}원`;
     imgEl.src = `../../images/chartitem_${i + 1}.png`;
+    imgEl.classList.add(`img-${i + 1}`);
     ulEl.appendChild(liEl);
-
     liEl.appendChild(imgEl);
     liEl.appendChild(span_name);
     liEl.appendChild(span_amount);
@@ -180,3 +181,10 @@ slider.addEventListener("mousemove", (e) => {
   const walk = x - startX;
   slider.scrollLeft = scrollLeft - walk;
 });
+
+/* const closeButton = document.querySelector(".expensesManagement > button");
+
+closeButton.addEventListener("click", () => {
+  alert("close!");
+});
+ */

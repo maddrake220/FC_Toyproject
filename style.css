@@ -15,15 +15,6 @@
   scrollbar-width: none; /* Firefox */
 }
 
-/* iphone status bar */
-.iphone-status-bar {
-  height: 44px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 31px;
-  margin-right: 12px;
-}
 /* account header */
 .account-container {
   position: relative;
