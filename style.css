@@ -198,7 +198,7 @@
 }
 .transaction-container {
   overflow-y: scroll;
-  height: 340px;
+  height: 360px;
 }
 .account-detail .saving-container > div {
   width: 302px;

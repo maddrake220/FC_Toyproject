@@ -1,51 +1,11 @@
+import { getBankList_groupby } from "../../components/getBankList_groupby";
+import { sliderX } from "../../components/sliderX";
 const Url =
   "https://raw.githubusercontent.com/maddrake220/team_toyproject/main/bankData.json";
 fetch(Url)
   .then((res) => res.json())
   .then((obj) => start(obj));
 
-const getBankList_groupbyDate = (list, sortby = "date") => {
-  const backList_groupby = [];
-  const tempArr = [];
-  let sumofPrice = 0;
-  list.map((value, index) => {
-    if (index === 0) {
-      isNewOne = sortby === "date" ? value.date : value.classify;
-    }
-    switch (sortby) {
-      case "date":
-        if (value.date !== isNewOne) {
-          backList_groupby.push([sumofPrice, ...tempArr]);
-          isNewOne = value.date;
-          tempArr.length = 0;
-          sumofPrice = 0;
-        }
-        break;
-      case "classify":
-        if (value.classify !== isNewOne) {
-          backList_groupby.push([sumofPrice, ...tempArr]);
-          isNewOne = value.classify;
-          tempArr.length = 0;
-          sumofPrice = 0;
-        }
-        break;
-      default:
-        if (value.date !== isNewOne) {
-          backList_groupby.push([sumofPrice, ...tempArr]);
-          isNewOne = sortby === "date" ? value.date : value.classify;
-          tempArr.length = 0;
-          sumofPrice = 0;
-        }
-    }
-
-    sumofPrice += value.price;
-    tempArr.push({ ...value });
-    if (index === list.length - 1) {
-      backList_groupby.push([sumofPrice, ...tempArr]);
-    }
-  });
-  return backList_groupby;
-};
 function start(bank) {
   const { bankList } = bank;
 
@@ -62,16 +22,18 @@ function start(bank) {
   const filterdList_classify = bankList_sortedbyClassify.filter((v) => {
     return v.income === "out" && v.date.slice(0, 7) === "2021-09";
   });
-  const bankList_groupbyDate = getBankList_groupbyDate(filterdList);
+  const bankList_groupbyDate = getBankList_groupby(filterdList);
 
-  const bankList_groupbyClassify = getBankList_groupbyDate(
+  const bankList_groupbyClassify = getBankList_groupby(
     filterdList_classify,
     "classify"
   );
 
-  const sumofPriceList_classify = bankList_groupbyClassify.map((v) => v[0]);
+  const sumofPriceList_classify = bankList_groupbyClassify.map((v) =>
+    Math.abs(v[0])
+  );
   // price list group by date
-  const sumofPriceList = bankList_groupbyDate.map((v) => v[0]);
+  const sumofPriceList = bankList_groupbyDate.map((v) => Math.abs(v[0]));
   // date list
   const uniqed = _.uniqBy(filterdList, "date");
   const uniqed_filtedList = uniqed.map((v) => v.date.slice(8, 10));
@@ -156,28 +118,4 @@ function start(bank) {
 }
 
 const slider = document.querySelector(".chartjs");
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener("mousedown", (e) => {
-  isDown = true;
-  slider.classList.add("active");
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener("mouseleave", () => {
-  isDown = false;
-  slider.classList.remove("active");
-});
-slider.addEventListener("mouseup", () => {
-  isDown = false;
-  slider.classList.remove("active");
-});
-slider.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = x - startX;
-  slider.scrollLeft = scrollLeft - walk;
-});
+sliderX(slider);

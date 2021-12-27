@@ -1,11 +1,12 @@
+import { sliderX } from "./components/sliderX";
+import { getBankList_groupby } from "./components/getBankList_groupby";
+
 const saving_name = document.querySelector(".saving-name");
 const saving_name2 = document.querySelector(".saving-name-2");
 const saved_money = document.querySelector(".saved-money");
 const saved_money2 = document.querySelector(".saved-money-2");
 const account_name = document.querySelector(".account-name");
-const progressBar1 = document.querySelector(".saving-list .progress-1");
 const progressingBar1 = document.querySelector(".saving-list .progressing-1");
-const progressBar2 = document.querySelector(".saving-list .progress-2");
 const progressingBar2 = document.querySelector(".saving-list .progressing-2");
 const transConEl = document.querySelector(".transaction-container");
 const avatar = document.getElementById("avatarimg");
@@ -22,15 +23,12 @@ fetch(Url)
 
 function start(bank) {
   const { bankList } = bank;
-
   const bankList_sortedbyDate = bankList.sort(function (a, b) {
     return Math.abs(new Date(a.date) - new Date(b.date));
   });
+
   bankList_sortedbyDate.reverse();
-  let compareDate = "";
-  let ulNum = 0;
-  let priceSum = 0;
-  let spanNum = 0;
+  const bankList_groubyDate = getBankList_groupby(bankList_sortedbyDate);
 
   // 날짜 관련
   const nowDate = new Date();
@@ -38,87 +36,49 @@ function start(bank) {
   const yesterdayDate = new Date(nowDate.setDate(nowDate.getDate() - 1));
   const yesterday = yesterdayDate.toISOString().split("T")[0];
 
-  // 은행 입출금 내역
-  bankList_sortedbyDate.map((v, i) => {
-    if (v.date !== compareDate) {
-      const divEl = document.createElement("div");
-      const h3El = document.createElement("h3");
-      const span = document.createElement("span");
-      spanNum++;
-      span.classList.add(`span-${spanNum}`);
-      const ulEl = document.createElement("ul");
-      ulNum++;
-      ulEl.classList.add(`ul-${ulNum}`);
-      h3El.innerText =
-        today === v.date ? "오늘" : yesterday === v.date ? "어제" : v.date;
-      if (ulNum !== 1) {
-        const span = document.querySelector(`.span-${spanNum - 1}`);
-        span.innerText =
-          priceSum <= 0 ? `${Math.abs(priceSum)}원 지출` : `${priceSum}원 수입`;
+  // 계좌 입출금 내역 부분
+  bankList_groubyDate.map((v, i) => {
+    const divEl = document.createElement("div");
+    const h3El = document.createElement("h3");
+    const span = document.createElement("span");
+    const ulEl = document.createElement("ul");
+    ulEl.classList.add(`ul-${i}`);
+    h3El.innerText =
+      today === v[1].date
+        ? "오늘"
+        : yesterday === v[1].date
+        ? "어제"
+        : v[1].date;
+    span.innerText = v[0] <= 0 ? `${Math.abs(v[0])}원 지출` : `${v[0]}원 수입`;
+    transConEl.appendChild(divEl);
+    divEl.appendChild(h3El);
+    divEl.appendChild(span);
+    transConEl.appendChild(ulEl);
+    v.map((value, index) => {
+      if (index !== 0) {
+        const liEl = document.createElement("li");
+        const ul = transConEl.querySelector(`.ul-${i}`);
+        const span1 = document.createElement("span");
+        const span2 = document.createElement("span");
+
+        span1.innerText = value.history;
+        span2.innerText = value.price;
+        if (value.income === "in") {
+          span2.classList.add("orange");
+        }
+
+        ul.appendChild(liEl);
+        liEl.appendChild(span1);
+        liEl.appendChild(span2);
       }
-      transConEl.appendChild(divEl);
-      divEl.appendChild(h3El);
-      divEl.appendChild(span);
-      transConEl.appendChild(ulEl);
-
-      priceSum = 0;
-    }
-
-    const liEl = document.createElement("li");
-    const ul = transConEl.querySelector(`.ul-${ulNum}`);
-    const span1 = document.createElement("span");
-    const span2 = document.createElement("span");
-
-    span1.innerText = v.history;
-    span2.innerText = v.price;
-    if (v.income === "in") {
-      span2.classList.add("orange");
-      priceSum += v.price;
-    } else if (v.income === "out") {
-      priceSum -= v.price;
-    }
-
-    ul.appendChild(liEl);
-    liEl.appendChild(span1);
-    liEl.appendChild(span2);
-    if (bankList_sortedbyDate.length - 1 === i) {
-      const lastSpan = document.querySelector(`.span-${spanNum}`);
-      lastSpan.innerText =
-        priceSum <= 0 ? `${Math.abs(priceSum)}원 지출` : `${priceSum}원 수입`;
-    }
-    compareDate = v.date;
+    });
   });
 }
-
+// sliderX
 const slider = document.querySelector(".saving-list");
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener("mousedown", (e) => {
-  isDown = true;
-  slider.classList.add("active");
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener("mouseleave", () => {
-  isDown = false;
-  slider.classList.remove("active");
-});
-slider.addEventListener("mouseup", () => {
-  isDown = false;
-  slider.classList.remove("active");
-});
-slider.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = x - startX;
-  slider.scrollLeft = scrollLeft - walk;
-});
+sliderX(slider);
 
 // swiper
-
 const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
 });
@@ -165,6 +125,7 @@ const savingChange = (index) => {
   }
 };
 
+// tran-container toggle하는 부분
 const horizontalBarToggle = document.querySelector(".horizontal-bar");
 const savingContainer = document.querySelector(".saving-container");
 let isSpread = false;
@@ -180,5 +141,3 @@ horizontalBarToggle.addEventListener("click", () => {
     }, 1000);
   }
 });
-
-let m_pos;
