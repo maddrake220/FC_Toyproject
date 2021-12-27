@@ -136,7 +136,8 @@ const savingChange = (index) => {
       saved_money2.innerText = "142,200원";
       progressingBar1.style = "background-color: #ff5f00;";
       progressingBar2.style = "background-color: #feb700";
-      avatar.src = "./images/avatar.png";
+      avatar.src =
+        "https://github.com/maddrake220/FC_Toyproject/blob/main/images/avatar.png?raw=true";
       break;
     case 1:
       account_name.innerText = "의민이 계좌";
@@ -146,7 +147,8 @@ const savingChange = (index) => {
       saved_money2.innerText = "82,200원";
       progressingBar1.style = "background-color: #55ACEE;";
       progressingBar2.style = "background-color: #005F59";
-      avatar.src = "./images/avatar2.png";
+      avatar.src =
+        "https://raw.githubusercontent.com/maddrake220/FC_Toyproject/main/images/avatar2.png";
       break;
     case 2:
       account_name.innerText = "할머니 계좌";
@@ -156,7 +158,8 @@ const savingChange = (index) => {
       saved_money2.innerText = "432,00원";
       progressingBar1.style = "background-color: #0A73C3;";
       progressingBar2.style = "background-color: #EEBA00";
-      avatar.src = "./images/avatar3.png";
+      avatar.src =
+        "https://github.com/maddrake220/FC_Toyproject/blob/main/images/avatar3.png?raw=true";
       break;
     default:
   }
@@ -177,3 +180,5 @@ horizontalBarToggle.addEventListener("click", () => {
     }, 1000);
   }
 });
+
+let m_pos;
